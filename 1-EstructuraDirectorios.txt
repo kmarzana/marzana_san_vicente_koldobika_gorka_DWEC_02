@@ -1,0 +1,20 @@
++---------------------------------------------+
+| 1. Crear la estructura de directorios,      |
+|    respetando la arquitectura estudiada,    |
+|    con los ficheros adjuntos                |
++---------------------------------------------+
+
+.
+├── index.html
+│
+├── css
+│   └── style.css
+│
+├── data
+│   ├── gastosCombustible.json
+│   └── tarifasCombustible.json
+│
+└── js
+    ├── main.js
+    └── classes
+        └── GastoCombustible.js
