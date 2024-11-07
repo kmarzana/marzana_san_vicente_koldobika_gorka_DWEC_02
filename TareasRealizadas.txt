@@ -119,6 +119,7 @@
 
 *** Se calcula el precio del viaje según los datos indicados en el formulario.
 
+    // for-of + if
     let tarifa;
     for (const element of tarifasJSON.tarifas) {
         if (element.anio == urtea) {
@@ -127,6 +128,10 @@
     }
 
     const precioViaje = kilometros * tarifa;
+
+    // método .find()
+    const encontrado = tarifasJSON.tarifas.find(element => element.anio == urtea);
+    const tarifaFind = encontrado.vehiculos[tipoVehiculo];
 
 +---------------------------------------------------------------+
 | 3.c. En “Gastos recientes:”, muestra en una nueva fila        |
