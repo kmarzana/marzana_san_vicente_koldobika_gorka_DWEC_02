@@ -124,7 +124,12 @@ function guardarGasto(event) {
         }
     }
 
-    console.log(tarifa);
+    console.log(`Tarifa obtenida mediante for..of + if: ${tarifa}`); // Mostramos la tarifa encontrada para revisar que se ha encontrado correctamente.
+
+    // Código alternativo a 3.b. usando el método .find()
+    const encontrado = tarifasJSON.tarifas.find(element => element.anio == urtea);
+    const tarifaFind = encontrado.vehiculos[tipoVehiculo];
+    console.log(`Tarifa obtenida mediante el método .find(): ${tarifaFind}`); // Mostramos la tarifa encontrada para revisar que se ha encontrado correctamente.
 
     const precioViaje = kilometros * tarifa;
 
@@ -136,7 +141,8 @@ function guardarGasto(event) {
     */
     const elementoLista = document.createElement('li');
     elementoLista.textContent = (new GastoCombustible(tipoVehiculo, fecha, kilometros, precioViaje)).converToJSON();
-    console.log(typeof new GastoCombustible(tipoVehiculo, fecha, kilometros, precioViaje).converToJSON());
+    console.log('Typeof del gasto reciente introducido antes de usar el método .convertToJSON(): ', (new GastoCombustible(tipoVehiculo, fecha, kilometros, precioViaje)));
+    console.log('Typeof del gasto reciente introducido tras usar el método .convertToJSON(): ', typeof new GastoCombustible(tipoVehiculo, fecha, kilometros, precioViaje).converToJSON());
     document.getElementById('expense-list').appendChild(elementoLista);
 
     /*
